@@ -10,7 +10,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Image from "next/image";
 
 interface ReviewProps {
   image: string;
@@ -117,7 +116,7 @@ export const TestimonialSection = () => {
                 <div className="p-6 flex flex-col h-full">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-10 h-10 rounded-md overflow-hidden bg-indigo-100 flex items-center justify-center">
-                      <Image
+                      <img
                         src={
                           review.companyLogo || "./03.png"
                         }

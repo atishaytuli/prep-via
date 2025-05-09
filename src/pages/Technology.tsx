@@ -1,6 +1,5 @@
 "use client"
 import { cn } from "@/lib/utils"
-import Image from "next/image"
 
 const CardsData = [
   {
@@ -89,7 +88,7 @@ const Card = ({ bgColor, textColor, quote, title, benefits, person, image, image
     >
       {hasImage ? (
         <div className="relative w-full h-full">
-          <Image src={image || "/placeholder.svg"} alt={imageAlt || ""} className="w-full h-full object-cover" />
+          <img src={image || "/placeholder.svg"} alt={imageAlt || ""} className="w-full h-full object-cover" />
         </div>
       ) : (
         <div className="flex flex-col p-4 sm:p-6 h-full justify-between">
@@ -129,7 +128,7 @@ const Card = ({ bgColor, textColor, quote, title, benefits, person, image, image
             <div className="flex items-center gap-3 mt-4">
               {person.avatar && (
                 <div className="h-10 w-10 rounded-full overflow-hidden">
-                  <Image
+                  <img
                     src={person.avatar || "/placeholder.svg"}
                     alt={person.name}
                     className="w-full h-full object-cover"
