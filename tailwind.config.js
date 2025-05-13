@@ -19,7 +19,8 @@ module.exports = {
   			roboto: [
   				'var(--font-roboto)',
   				'sans-serif'
-  			]
+  			],
+			inter: "var(--font-inter)",
   		},
   		colors: {
   			primary: {

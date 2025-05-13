@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import {  Roboto } from "next/font/google";
+import { Roboto, Poppins, Inter } from "next/font/google";
 import "./globals.css";
-
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -10,12 +9,26 @@ const roboto = Roboto({
   display: "swap",
 });
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "PrepVia",
   description:
     "Prepvia is a next-generation logistics and product prep partner for modern e-commerce. We specialize in Amazon FBA and marketplace fulfillment, offering fast, tech-driven solutions that help sellers scale with ease.",
   icons: {
-    icon: "./PREPVIA_icon  Electric Cyan.png",
+    icon: "./favicon.png",
   },
   openGraph: {
     title: "Prepvia – Logistics That Move You Forward",
@@ -50,7 +63,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` ${roboto.variable}`}>
+      <body
+        className={`${roboto.variable} ${poppins.variable} ${inter.variable}`}
+      >
         {children}
       </body>
     </html>

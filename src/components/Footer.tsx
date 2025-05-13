@@ -1,17 +1,12 @@
 import React from "react";
-import {
-  ArrowRight,
-  Instagram,
-  Twitter,
-  Facebook,
-} from "lucide-react";
+import { ArrowRight, Instagram, Twitter, Facebook } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="w-full flex flex-col conatiner mx-auto">
-      <div className="text-center max-w-5xl mx-auto py-8 md:py-16">
+    <div className="container flex flex-col conatiner mx-auto">
+      <div className="text-center max-w-5xl mx-auto mt-6 py-8 md:py-16">
         <h2 className="text-2xl md:text-4xl lg:text-6xl font-normal text-[#273238]">
           <div className="mb-2">partner with—us for</div>
           <div className="flex items-center justify-center gap-2 md:gap-4 flex-wrap md:flex-nowrap">
@@ -30,7 +25,7 @@ const Footer = () => {
         </h2>
       </div>
 
-      <div className="pt-8 px-8 md:px-12 bg-gradient-to-t from-primary-cyan/10 via-white/50 to-white pointer-events-none mt-12 md:mt-24">
+      <div className="pt-4 px-8 md:px-12 bg-gradient-to-t from-cyan-600/20 via-white/50 to-white pointer-events-none mt-12 md:mt-24">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between gap-8 pb-8 border-b border-gray-200">
             {/* Logo + Brand */}
@@ -49,21 +44,13 @@ const Footer = () => {
                 success.
               </p>
               <div className="flex items-center space-x-4 mt-4">
-                <a href="#" className="text-primary-cyan" aria-label="Facebook">
+                <a href="#" className="text-cyan-600" aria-label="Facebook">
                   <Facebook size={20} />
                 </a>
-                <a
-                  href="#"
-                  className="text-primary-cyan"
-                  aria-label="Instagram"
-                >
+                <a href="#" className="text-cyan-600" aria-label="Instagram">
                   <Instagram size={20} />
                 </a>
-                <a
-                  href="#"
-                  className="text-primary-cyan"
-                  aria-label="X (Twitter)"
-                >
+                <a href="#" className="text-cyan-600" aria-label="X (Twitter)">
                   <Twitter size={20} />
                 </a>
                 <div className="w-8 h-8">
@@ -149,7 +136,7 @@ const Footer = () => {
               <div className="flex flex-col">
                 <h4 className="font-medium mb-3 text-gray-800">Contact</h4>
                 <p className="text-gray-600">Email us anytime:</p>
-                <p className="text-primary-cyan font-medium mb-2">
+                <p className="text-cyan-600 font-medium mb-2">
                   support@prepvia.com
                 </p>
                 <p className="text-gray-600">Hialeah, FL.</p>
@@ -157,10 +144,14 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="pt-8 pb-2 text-center text-gray-500 text-sm">
+          <div className="pt-8 pb-2 flex items-center justify-between text-gray-500 text-sm">
             <p>
               &copy; {new Date().getFullYear()} PrepVia. All rights reserved.
             </p>
+            <div className="flex gap-4 text-xs">
+              <a href="#">Terms & Conditions</a>
+              <a href="#">Privacy Policy</a>
+            </div>
           </div>
         </div>
       </div>

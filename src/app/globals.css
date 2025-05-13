@@ -52,11 +52,11 @@ body {
 }
 
 .sub-heading {
-  @apply font-roboto text-sm text-center mb-2 text-primary-cyan uppercase;
+  @apply font-poppins text-sm text-center mb-2 text-primary-cyan uppercase;
 }
 
 .heading {
-  @apply text-3xl md:text-4xl font-semibold text-center mb-12 text-black;
+  @apply font-inter text-3xl md:text-4xl font-semibold text-center mb-12 text-black;
 }
 
 .arrow-line {
@@ -78,4 +78,38 @@ body {
   to {
     stroke-dashoffset: 0;
   }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse var(--duration) linear infinite;
+}
+
+.group:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+.group:hover .animate-marquee-reverse {
+  animation-play-state: paused;
 }
