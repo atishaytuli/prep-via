@@ -12,7 +12,7 @@ interface CardData {
 const cardsData: CardData[] = [
   {
     id: 1,
-    imageUrl: "./02.png",
+    imageUrl: "./20250514_2151_Warehouse Parcel Scanning_simple_compose_01jv94dmw1fjyvsqsk5xdc99m9.png",
     alt: "Warehouse inspection process",
     title: "Receiving & Inspection",
     description:
@@ -20,7 +20,7 @@ const cardsData: CardData[] = [
   },
   {
     id: 2,
-    imageUrl: "./p2.jpg",
+    imageUrl: "./20250514_2145_Barcode Scanning Parcel_simple_compose_01jv94494vfg68qbt3z2w87h86.png",
     alt: "Labeling station",
     title: "Barcode Scanning & Amazon Labeling",
     description:
@@ -28,7 +28,7 @@ const cardsData: CardData[] = [
   },
   {
     id: 3,
-    imageUrl: "./p1.jpg",
+    imageUrl: "./20250514_2145_Barcode Scanning Parcel_simple_compose_01jv94494wfb69ket9wzdx6qxv.png",
     alt: "Storage facility",
     title: "Short-Term Storage",
     description:
@@ -36,7 +36,7 @@ const cardsData: CardData[] = [
   },
   {
     id: 4,
-    imageUrl: "./p3.webp",
+    imageUrl: "./20250514_2208_Warehouse Parcel Coordination_simple_compose_01jv95dy48ee6sg2rpbpy9tgx2.png",
     alt: "Amazon pickup coordination",
     title: "Order Prep & Amazon Pickup Coordination",
     description:
@@ -69,31 +69,20 @@ const CardGrid: FC = () => {
               {/* Content Section */}
               <div
                 className={cn(
-                  "md:w-3/5 min-h-[375px] p-6 flex flex-col justify-between border rounded-xl",
-                  card.id === 2 ? "bg-cyan-600/70 text-white" : "",
-                  card.id === 3 ? "bg-cyan-600/80 text-white" : "",
-                  card.id === 1 || card.id === 4 ? "bg-[#FBFAF9]" : ""
+                  "md:w-3/5 min-h-[375px] p-6 flex flex-col justify-between border rounded-xl"
                 )}
               >
                 <h3
                   className={cn(
-                    "text-4xl font-medium",
-                    card.id === 2 || card.id === 3
-                      ? "text-gray-100"
-                      : "text-gray-900"
+                    "text-4xl font-medium text-gray-900",
                   )}
                 >
                   {card.title}
                 </h3>
-
-                {/* Spacer to push paragraph down */}
                 <div className="flex-1" />
 
                 <p
-                  className={cn( "text-sm",
-                    card.id === 2 || card.id === 3
-                      ? "text-white"
-                      : "text-gray-600"
+                  className={cn( "text-sm text-gray-600",
                   )}
                 >
                   {card.description}

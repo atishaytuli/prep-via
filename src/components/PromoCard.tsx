@@ -3,7 +3,7 @@ import { Play } from "lucide-react";
 
 export default function PromoCard() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-16">
+    <div className="max-w-5xl mx-auto px-4 py-20">
       <div
         className="rounded-3xl overflow-hidden"
         style={{
@@ -29,9 +29,9 @@ export default function PromoCard() {
               </button>
 
               {/* Audio player container */}
-              <div className="flex items-center bg-white/10 rounded-full text-white">
+              <div className="flex items-center bg-white rounded-full text-cyan-600">
                 <div className="flex items-center gap-2 w-full py-1.5 px-2">
-                  <button className="bg-white text-cyan-600 rounded-full p-1.5 flex items-center justify-center">
+                  <button className="bg-cyan-600 text-white rounded-full p-1.5 flex items-center justify-center">
                     <Play className="h-4 w-4" />
                   </button>
                   <span className="text-sm whitespace-nowrap">0:00/1:51</span>
@@ -40,7 +40,7 @@ export default function PromoCard() {
                     min="0"
                     max="100"
                     defaultValue="0"
-                    className="w-full h-1 bg-white/30 rounded-full appearance-none cursor-pointer"
+                    className="w-full h-1 bg-cyan-600 rounded-full appearance-none cursor-pointer"
                   />
                 </div>
               </div>

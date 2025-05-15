@@ -25,7 +25,7 @@ const Footer = () => {
         </h2>
       </div>
 
-      <div className="pt-4 px-8 md:px-12 bg-gradient-to-t from-cyan-600/20 via-white/50 to-white pointer-events-none mt-12 md:mt-24">
+      <div className="pt-4 px-4 md:px-12 bg-gradient-to-t from-cyan-600/20 via-white/50 to-white pointer-events-none mt-12 md:mt-24">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between gap-8 pb-8 border-b border-gray-200">
             {/* Logo + Brand */}
@@ -148,7 +148,7 @@ const Footer = () => {
             <p>
               &copy; {new Date().getFullYear()} PrepVia. All rights reserved.
             </p>
-            <div className="flex gap-4 text-xs">
+            <div className="hidden md:flex gap-4 text-xs">
               <a href="#">Terms & Conditions</a>
               <a href="#">Privacy Policy</a>
             </div>

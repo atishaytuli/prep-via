@@ -31,8 +31,8 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start py-12">
+    <section className="max-w-6xl mx-auto py-16 px-4 lg:px-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-12">
         <div>
           <div className="mb-6">
             <Headphones className="h-8 w-8 text-gray-700" />

@@ -43,7 +43,7 @@ export default function Hero() {
               We {"don't"} just move boxes - we move business forward!{" "}
             </span>
           </Badge>
-          <div className="max-w-6xl mt-10">
+          <div className="w-full px-4 md:px-0 md:max-w-6xl mt-10">
             <h1 className="text-4xl md:text-6xl font-normal mb-6 text-center font-poppins">
               Accelerate Your{" "}
               <span className="font-semibold italic">Amazon</span> FBA{" "}

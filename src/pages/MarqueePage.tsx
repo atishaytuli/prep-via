@@ -75,27 +75,31 @@ const ServiceCard = ({
 
 export default function MarqueeDemo() {
   return (
-    <div className="max-w-7xl mx-auto relative flex flex-col items-center justify-center overflow-hidden py-16">
-      <h2 className="text-4xl font-semibold font-inter mb-8">
-        Every Product. <span className="text-cyan-600">Every Prep.</span>
-      </h2>
-      <p className="text-lg max-w-3xl mx-auto text-center text-gray-600 mb-12">
-        Prep Via is built to handle preparation and fulfillment of all product
-        types with customizable, reliable, and ultra-fast prep solutions - no
-        matter your category or size.
-      </p>
-      <Marquee pauseOnHover className="[--duration:60s] mb-2">
-        {firstRow.map((service) => (
-          <ServiceCard key={service.title} {...service} />
-        ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:60s]">
-        {secondRow.map((service) => (
-          <ServiceCard key={service.title} {...service} />
-        ))}
-      </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background" />
-    </div>
+    <section className="py-16">
+      <div className="max-w-7xl mx-auto flex flex-col items-center">
+        <h2 className="text-4xl font-semibold font-inter mb-8 text-center">
+          Every Product. <span className="text-cyan-600">Every Prep.</span>
+        </h2>
+        <p className="text-lg max-w-3xl mx-auto text-center text-gray-600 mb-12">
+          Prep Via is built to handle preparation and fulfillment of all product
+          types with customizable, reliable, and ultra-fast prep solutions - no
+          matter your category or size.
+        </p>
+      </div>
+      <div className="max-w-7xl mx-auto relative flex flex-col items-center justify-center overflow-hidden">
+        <Marquee pauseOnHover className="[--duration:60s] mb-2">
+          {firstRow.map((service) => (
+            <ServiceCard key={service.title} {...service} />
+          ))}
+        </Marquee>
+        <Marquee reverse pauseOnHover className="[--duration:60s]">
+          {secondRow.map((service) => (
+            <ServiceCard key={service.title} {...service} />
+          ))}
+        </Marquee>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background" />
+      </div>
+    </section>
   );
 }

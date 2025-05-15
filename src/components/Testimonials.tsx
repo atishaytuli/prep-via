@@ -1,8 +1,9 @@
-'use client';
+"use client";
 import { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote } from "lucide-react";
+import { TabButtons } from "./Tabbutton";
 
 interface ReviewProps {
   image: string;
@@ -90,33 +91,71 @@ const reviewList: ReviewProps[] = [
   },
 ];
 
-const TestimonialCard = ({ data, partial = false }: { data: ReviewProps; partial?: boolean }) => (
-  <div className={`h-full bg-white rounded-lg shadow p-6 sm:p-8 flex flex-col ${partial ? "overflow-hidden" : ""}`}>
-    {/* Quote icon */}
+const TestimonialCard = ({
+  data,
+  partial = false,
+}: {
+  data: ReviewProps;
+  partial?: boolean;
+}) => (
+  <div
+    className={`h-full bg-white rounded-xl shadow-lg p-6 sm:p-8 flex flex-col justify-between
+      ${partial ? "opacity-60 scale-95" : "transform-gpu"} 
+      transition-all duration-300 hover:shadow-xl`}
+  >
     <div className="mb-4">
-      <Quote className="w-6 h-6 text-cyan-600" />
+      <Quote className="w-8 h-8 text-cyan-600 opacity-80" />
     </div>
 
-    {/* Comment */}
-    <div className={`${partial ? "line-clamp-3" : ""} text-gray-700 flex-grow`}>
+    <div
+      className={`${
+        partial ? "line-clamp-3" : ""
+      } text-gray-600 flex-grow mb-4 text-base`}
+    >
       &ldquo;{data.comment}&rdquo;
     </div>
 
-    {/* Divider */}
-    <div className="w-full border-t border-gray-300 my-4"></div>
+    <div
+      className={`${
+        partial ? "opacity-60" : ""
+      } transition-opacity duration-300`}
+    >
+      <div className="flex mb-3">
+        {[...Array(5)].map((_, i) => (
+          <svg
+            key={i}
+            className={`w-4 h-4 ${
+              i < Math.floor(data.rating) ? "text-yellow-400" : "text-gray-300"
+            }`}
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        ))}
+        <span className="ml-1 text-xs text-gray-600">
+          {data.rating.toFixed(1)}
+        </span>
+      </div>
 
-    {/* User Info */}
-    <div className={`flex items-center ${partial ? "opacity-0" : ""}`}>
-      <Avatar className="h-10 w-10 border-2 border-white">
-        <AvatarImage src={data.image} alt={data.name} />
-        <AvatarFallback className="bg-cyan-600 text-white">
-          {data.name.split(" ").map((n) => n[0]).join("")}
-        </AvatarFallback>
-      </Avatar>
-      <div className="ml-3">
-        <div className="font-bold text-sm">{data.name}</div>
-        <div className="text-xs text-gray-600">
-          {data.companyName}
+      <div className="w-full border-t border-gray-200 mb-4"></div>
+
+      <div className="flex items-center">
+        <Avatar className="h-12 w-12 border-2 border-white shadow-sm">
+          <AvatarImage src={data.image || "/placeholder.svg"} alt={data.name} />
+          <AvatarFallback className="bg-gradient-to-br from-cyan-400 to-cyan-600 text-white">
+            {data.name
+              .split(" ")
+              .map((n) => n[0])
+              .join("")}
+          </AvatarFallback>
+        </Avatar>
+        <div className="ml-3">
+          <div className="font-bold text-gray-800">{data.name}</div>
+          <div className="text-sm text-gray-600">{data.companyName}</div>
+          {data.socialHandle && (
+            <div className="text-xs text-cyan-600">{data.socialHandle}</div>
+          )}
         </div>
       </div>
     </div>
@@ -126,14 +165,18 @@ const TestimonialCard = ({ data, partial = false }: { data: ReviewProps; partial
 export const TestimonialSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [isPaused] = useState(false);
 
   useEffect(() => {
+    if (isPaused) return;
+
     const interval = setInterval(() => {
       setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % reviewList.length);
-    }, 3000);
+    }, 5000);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
   const getVisibleReviews = () => {
     const total = reviewList.length;
@@ -147,53 +190,45 @@ export const TestimonialSection = () => {
 
   const visibleReviews = getVisibleReviews();
 
-  const variants = {
-    enter: (direction: number) => ({ x: direction > 0 ? "100%" : "-100%", opacity: 0 }),
-    center: { x: "0%", opacity: 1 },
-    exit: (direction: number) => ({ x: direction < 0 ? "100%" : "-100%", opacity: 0 }),
-  };
-
   return (
-    <section className="max-w-6xl mx-auto bg-gray-50 py-12 md:py-20 rounded-2xl">
-      <div className="text-center mb-12 md:mb-16">
-        <p className="text-cyan-500 font-medium mb-2">Testimonials</p>
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800">What Our Clients Say</h2>
+    <section className="max-w-6xl mx-auto bg-gray-50 py-16 px-4 rounded-2xl shadow-inner">
+      <div className="flex flex-col items-center gap-6 text-center mb-12 md:mb-16">
+        <TabButtons title="Testimonials" title2="" />
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 font-inter">
+          What Our Clients Say
+        </h2>
       </div>
 
-      <div className="relative overflow-hidden px-4 md:px-6">
-        {/* Fixed height container with proper height to prevent cutting */}
-        <div className="testimonial-container h-[400px] md:h-[350px] lg:h-[320px]">
+      <div className="relative overflow-hidden pb-4">
+        <div className="testimonial-container h-[450px] md:h-[400px] lg:h-[380px] relative">
           <AnimatePresence custom={direction} initial={false}>
             <motion.div
               className="flex items-stretch absolute w-full h-full"
               key={currentIndex}
               custom={direction}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ 
-                x: { type: "tween", ease: "easeInOut", duration: 0.6 },
-                opacity: { duration: 0.3 }
+              initial={{ x: direction > 0 ? "100%" : "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: direction < 0 ? "100%" : "-100%" }}
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.5 },
               }}
             >
-              {/* Mobile view: show only the current card */}
-              <div className="w-full md:hidden">
+              <div className="w-full md:hidden px-4">
                 <TestimonialCard data={visibleReviews[1]} />
               </div>
-              
-              {/* Desktop view: show multiple cards */}
-              <div className="hidden md:flex w-full h-full">
-                <div className="w-[10%] opacity-40 px-1 h-full">
+
+              <div className="hidden md:flex w-full h-full px-4">
+                <div className="w-[15%] px-2 h-full flex items-center">
                   <TestimonialCard data={visibleReviews[0]} partial />
                 </div>
-                <div className="w-[40%] px-2 md:px-4 h-full">
+                <div className="w-[35%] px-2 h-full">
                   <TestimonialCard data={visibleReviews[1]} />
                 </div>
-                <div className="w-[40%] px-2 md:px-4 h-full">
+                <div className="w-[35%] px-2 h-full">
                   <TestimonialCard data={visibleReviews[2]} />
                 </div>
-                <div className="w-[10%] opacity-40 px-1 h-full">
+                <div className="w-[15%] px-2 h-full flex items-center">
                   <TestimonialCard data={visibleReviews[3]} partial />
                 </div>
               </div>
@@ -202,8 +237,34 @@ export const TestimonialSection = () => {
         </div>
       </div>
 
-      <div className="flex justify-center mt-8 md:mt-12">
-        <div className="flex items-center gap-2 bg-gray-100 p-2 rounded-full">
+      <div className="flex justify-center items-center gap-4 mt-8 md:mt-16">
+        <button
+          onClick={() => {
+            setDirection(-1);
+            setCurrentIndex(
+              (prev) => (prev - 1 + reviewList.length) % reviewList.length
+            );
+          }}
+          className="p-1 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors"
+          aria-label="Previous testimonial"
+        >
+          <svg
+            className="w-4 h-4 text-gray-700"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+
+        <div className="flex items-center gap-2 bg-gray-50 p-2 rounded-full shadow-md">
           {reviewList.map((_, index) => (
             <button
               key={index}
@@ -211,13 +272,39 @@ export const TestimonialSection = () => {
                 setDirection(index > currentIndex ? 1 : -1);
                 setCurrentIndex(index);
               }}
-              className={`w-2 h-2 rounded-full transition-colors ${
-                index === currentIndex ? "bg-gray-800" : "bg-gray-300"
+              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                index === currentIndex
+                  ? "bg-cyan-600 scale-110"
+                  : "bg-gray-400 hover:bg-gray-400"
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />
           ))}
         </div>
+
+        <button
+          onClick={() => {
+            setDirection(1);
+            setCurrentIndex((prev) => (prev + 1) % reviewList.length);
+          }}
+          className="p-1 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors"
+          aria-label="Next testimonial"
+        >
+          <svg
+            className="w-4 h-4 text-gray-700"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
       </div>
     </section>
   );
