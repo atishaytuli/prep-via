@@ -78,11 +78,7 @@ export default function PromoCard() {
               <img
                 src="/phone.png"
                 alt="Prep Via mobile app"
-                className="w-48 sm:w-64 md:w-auto object-contain drop-shadow-xl"
-                style={{
-                  filter: "drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.2))",
-                  transform: "translate(10%, 31%)",
-                }}
+                className="w-full md:w-auto object-contain drop-shadow-xl phone-img"
               />
             </div>
           </div>

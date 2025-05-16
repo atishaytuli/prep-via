@@ -6,6 +6,12 @@ import Navbar from "@/components/Navbar";
 import React from "react";
 import FAQSection from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import HeroSection from "./components/hero";
+import MainServicesSection from "./components/mainservices";
+import LogisticsStorageSection from "./components/logistics";
+import OversizedItemSection from "./components/oversized";
+import AddOnServicesSection from "./components/addon";
+import CostCalculatorSection from "../pricing/components/calculator";
 
 const Profits = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,6 +30,14 @@ const Profits = () => {
     <>
       <Announcement />
       <Navbar paddingClass={paddingClass} />
+      <main>
+        <HeroSection />
+        <MainServicesSection />
+        <LogisticsStorageSection />
+        <OversizedItemSection />
+        <AddOnServicesSection />
+        <CostCalculatorSection />
+      </main>
       <FAQSection />
       <Footer />
     </>

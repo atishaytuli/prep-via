@@ -113,3 +113,14 @@ body {
 .group:hover .animate-marquee-reverse {
   animation-play-state: paused;
 }
+
+@media (max-width: 768px) {
+  .phone-img {
+    transform: translate(7%, 50%);
+  }
+}
+@media (min-width: 769px) {
+  .phone-img {
+    transform: translate(10%, 35%);
+  }
+}
