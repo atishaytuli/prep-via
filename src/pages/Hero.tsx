@@ -2,6 +2,7 @@
 import Navbar from "@/components/Navbar";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 
 const trustPoints = [
   "Pay After You Sell",
@@ -12,9 +13,21 @@ const trustPoints = [
 ];
 
 export default function Hero() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const paddingClass = isScrolled ? "py-4" : "py-6";
   return (
     <main className=" container mx-auto bg-[linear-gradient(to_top_right,_#ccf1f6,_white,_#f9fafb,_#bfdbfe)]">
-      <Navbar />
+      <Navbar paddingClass={paddingClass} />
       <section className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-12">
         <div className="w-full p-8 mt-8 md:mt-16 flex flex-col items-center justify-between rounded-3xl">
           <Badge variant="outline" className="text-xs md:text-sm py-2 md:mt-12">

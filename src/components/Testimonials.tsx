@@ -191,7 +191,7 @@ export const TestimonialSection = () => {
   const visibleReviews = getVisibleReviews();
 
   return (
-    <section className="max-w-6xl mx-auto bg-gray-50 py-16 px-4 rounded-2xl shadow-inner">
+    <section className="max-w-6xl mx-auto bg-gray-50 py-16 px-4 rounded-md">
       <div className="flex flex-col items-center gap-6 text-center mb-12 md:mb-16">
         <TabButtons title="Testimonials" title2="" />
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 font-inter">

@@ -1,9 +1,8 @@
 "use client";
-import { Play } from "lucide-react";
 
 export default function PromoCard() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-20">
+    <div className="max-w-5xl mx-auto px-4 py-10">
       <div
         className="rounded-3xl overflow-hidden"
         style={{
@@ -25,25 +24,51 @@ export default function PromoCard() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="bg-white text-cyan-600 font-medium py-2.5 px-6 rounded-full hover:bg-gray-100 transition-colors">
-                Call to test for free
+                How We Work
               </button>
 
-              {/* Audio player container */}
-              <div className="flex items-center bg-white rounded-full text-cyan-600">
-                <div className="flex items-center gap-2 w-full py-1.5 px-2">
-                  <button className="bg-cyan-600 text-white rounded-full p-1.5 flex items-center justify-center">
-                    <Play className="h-4 w-4" />
-                  </button>
-                  <span className="text-sm whitespace-nowrap">0:00/1:51</span>
-                  <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    defaultValue="0"
-                    className="w-full h-1 bg-cyan-600 rounded-full appearance-none cursor-pointer"
-                  />
-                </div>
-              </div>
+              <button className="flex bg-white text-cyan-600 font-medium py-2.5 px-6 rounded-full hover:bg-gray-100 transition-colors">
+                Get Started{" "}
+                <span className="relative ml-2 flex items-center">
+                  <svg
+                    aria-hidden="true"
+                    className="arrow-svg overflow-visible pointer-events-none w-[40px] h-[12px]"
+                  >
+                    <g
+                      transform="translate(0 .6)"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      fill="none"
+                      fillRule="evenodd"
+                      strokeLinecap="round"
+                    >
+                      <line
+                        pathLength="1"
+                        className="arrow-line"
+                        x1="34.5"
+                        y1="4.9"
+                        x2="29.7"
+                      ></line>
+                      <line
+                        pathLength="1"
+                        className="arrow-line"
+                        x1="34.5"
+                        y1="4.9"
+                        x2="29.7"
+                        y2="10"
+                      ></line>
+                      <line
+                        pathLength="1"
+                        className="arrow-line"
+                        x1=".5"
+                        y1="4.9"
+                        x2="34.5"
+                        y2="4.9"
+                      ></line>
+                    </g>
+                  </svg>
+                </span>
+              </button>
             </div>
           </div>
 

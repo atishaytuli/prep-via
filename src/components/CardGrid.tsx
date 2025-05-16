@@ -69,7 +69,7 @@ const CardGrid: FC = () => {
               {/* Content Section */}
               <div
                 className={cn(
-                  "md:w-3/5 min-h-[375px] p-6 flex flex-col justify-between border rounded-xl"
+                  "md:w-3/5 min-h-[375px] p-6 flex flex-col justify-between border rounded-xl shadow-inner bg-gray-50"
                 )}
               >
                 <h3

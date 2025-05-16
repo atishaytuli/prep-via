@@ -10,8 +10,6 @@ import TestimonialSection from "@/components/Testimonials";
 import ContactForm from "@/pages/Contact-Form";
 import FAQSection from "@/components/FAQ";
 import Footer from "@/components/Footer";
-// import PrepViaProfit from "@/pages/Profit";
-// import PrepVia from "@/pages/Profits2";
 
 const page = () => {
   return (
@@ -26,8 +24,6 @@ const page = () => {
       <ContactForm />
       <FAQSection />
       <Footer />
-      {/* <PrepViaProfit /> */}
-      {/* <PrepVia /> */}
     </main>
   );
 };
