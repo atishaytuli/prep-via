@@ -12,7 +12,7 @@ export default function CalculatorSection() {
   const [asinInput, setAsinInput] = useState("")
 
   return (
-    <section className="py-12 relative">
+    <section className="mb-16 relative">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto relative">
           {/* Improved gradient - more subtle and centered */}
@@ -99,7 +99,7 @@ export default function CalculatorSection() {
                     )}
                   </div>
 
-                  <div className="space-x-2 flex">
+                  <div className="space-x-2 spacr-y-2 flex flex-col md:flex-row">
                     <FeatureItem
                       icon={<Search className="h-5 w-5 text-cyan-600 flex-shrink-0" />}
                       title="Instant ASIN-Based Calculation"
@@ -115,7 +115,7 @@ export default function CalculatorSection() {
                 </div>
                 <div className="hidden md:flex items-center justify-center">
                   <div className="bg-cyan-50 p-5 rounded-full">
-                    <Calculator className="h-24 w-24 text-cyan-600" />
+                    <Calculator className="h-6 w-6 text-cyan-600" />
                   </div>
                 </div>
               </div>

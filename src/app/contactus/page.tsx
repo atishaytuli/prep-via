@@ -29,7 +29,7 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto mt-16 sm:mt-24 md:mt-32">
           <div className="text-center mb-12">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold font-inter mb-4 sm:mb-6">
-              {"We're"} Here to Help!
+              {"We're"} here to <span className="text-cyan-600 font-light italic ">Help !</span>
             </h1>
             <p className="text-gray-600 sm:text-lg max-w-3xl mx-auto">
               Reach out to our friendly, expert team for any questions, assistance, or a custom quote tailored

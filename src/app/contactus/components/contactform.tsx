@@ -78,9 +78,9 @@ export default function ContactForm() {
             {features.map((feature, index) => (
               <div key={index} className="flex items-center gap-3">
                 <div className="flex-shrink-0">
-                  <span className="inline-block w-3 h-3 bg-cyan-400 rounded-full"></span>
+                  <span className="inline-block w-2 h-2 bg-cyan-400 rounded-full"></span>
                 </div>
-                <span className="text-gray-700 text-sm">{feature}</span>
+                <span className="text-gray-700 text-sm font-medium">{feature}</span>
               </div>
             ))}
           </div>
