@@ -5,11 +5,9 @@ import type React from "react"
 import { motion } from "framer-motion"
 import Announcement from "../../components/Annoucment"
 import Navbar from "@/components/Navbar"
-import { ArrowRight, Mail } from "lucide-react"
 
 export default function ComingSoonPage() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [email, setEmail] = useState("")
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,13 +19,6 @@ export default function ComingSoonPage() {
   }, [])
 
   const paddingClass = isScrolled ? "py-4" : "py-12"
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle email submission - you can add your logic here
-    alert(`Thank you! We'll notify ${email} when we launch.`)
-    setEmail("")
-  }
 
   // Floating animation variants
   const floatingAnimation = {
@@ -129,7 +120,7 @@ export default function ComingSoonPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            PrepVia Blogs are on the way! We're crafting insightful content to help you optimize your prep and
+            PrepVia Blogs are on the way! {"We're"} crafting insightful content to help you optimize your prep and
             fulfillment processes.
           </motion.p>
         </div>

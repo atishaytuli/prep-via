@@ -73,7 +73,7 @@ export function ServicePricing() {
               <tbody>
                 <tr className="border-b border-gray-100 hover:bg-gray-50">
                   <td className="py-3 px-4 text-gray-700">Container Receiving</td>
-                  <td className="py-3 px-4 text-gray-700 font-medium">20': $250/container, 40': $500/container</td>
+                  <td className="py-3 px-4 text-gray-700 font-medium">{"20': $250/container, 40': $500/container"}</td>
                 </tr>
                 <tr className="border-b border-gray-100 hover:bg-gray-50">
                   <td className="py-3 px-4 text-gray-700">Carton Receiving</td>

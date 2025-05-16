@@ -7,7 +7,7 @@ import React from "react";
 import FAQSection from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
-const profits = () => {
+const Profits = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -30,4 +30,4 @@ const profits = () => {
   );
 };
 
-export default profits;
+export default Profits;

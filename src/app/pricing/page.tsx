@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 import TestimonialSection from "@/components/Testimonials";
 import PricingPage from "./components/Pricing";
 
-const profits = () => {
+const Profits = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -34,4 +34,4 @@ const profits = () => {
   );
 };
 
-export default profits;
+export default Profits;

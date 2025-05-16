@@ -6,7 +6,6 @@ import MembershipCard from "../membership-card";
 import PricingSection from "../Pricing";
 import FeaturesSection from "../features";
 import WhyChooseSection from "../benifit";
-import CtaSection from "../cta-section";
 import Announcement from "@/components/Annoucment";
 import Navbar from "@/components/Navbar";
 import FAQSection from "@/components/FAQ";
@@ -36,7 +35,6 @@ export default function ClientPage() {
         <PricingSection />
         <FeaturesSection />
         <WhyChooseSection />
-        <CtaSection />
       </main>
       <FAQSection />
       <Footer />

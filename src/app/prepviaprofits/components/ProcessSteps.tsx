@@ -5,7 +5,7 @@ interface ProcessStepProps {
   isLast?: boolean
 }
 
-export function ProcessStep({ number, title, description, isLast = false }: ProcessStepProps) {
+export function ProcessStep({ number, title, description }: ProcessStepProps) {
   return (
     <div className="flex gap-8 items-start relative">
       <div className="relative">

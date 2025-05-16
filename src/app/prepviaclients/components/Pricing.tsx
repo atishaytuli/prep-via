@@ -9,7 +9,7 @@ import type { PricingPlan } from "./../types/pricing";
 import { TabButtons } from "@/components/Tabbutton";
 
 export default function PricingSection() {
-  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">(
+  const [billingPeriod] = useState<"monthly" | "yearly">(
     "monthly"
   );
 

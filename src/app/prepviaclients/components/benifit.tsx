@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { Crown, Zap, BarChart, Clock, Cpu, HelpCircle } from "lucide-react";
+import { Crown, Zap, BarChart, Clock, Cpu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TabButtons } from "@/components/Tabbutton";
 
