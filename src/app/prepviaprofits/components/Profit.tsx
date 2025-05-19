@@ -1,52 +1,55 @@
-import { TabButtons } from "@/components/Tabbutton"
-import { DollarSign, TrendingUp, FileText, BarChart4 } from "lucide-react"
-import { VideoPlayer } from "./VideoPlayer"
-import { ProcessSteps } from "./ProcessSteps"
-import { BenefitGrid } from "./BenifitsCard"
-import { EligibilitySection } from "./Eligibility"
+import { TabButtons } from "@/components/Tabbutton";
+import { DollarSign, TrendingUp, FileText, BarChart4 } from "lucide-react";
+import { VideoPlayer } from "./VideoPlayer";
+import { ProcessSteps } from "./ProcessSteps";
+import { BenefitGrid } from "./BenifitsCard";
+import { EligibilitySection } from "./Eligibility";
 
 const processSteps = [
   {
     number: "01",
-    title: "Understand & Analyze",
+    title: "Apply for Eligibility",
     description:
-      "We start by understanding your business needs and identifying opportunities to streamline operations and boost efficiency.",
+      "To get started, simply apply online for PrepViaProfit™ eligibility. This step ensures you can take advantage of our exclusive program benefits.",
   },
   {
     number: "02",
-    title: "Strategize & Plan",
+    title: "Send Your Products",
     description:
-      "We develop AI-driven strategies tailored to help you convert more leads, manage appointments, and maximize revenue.",
+      "Once approved, send your products to Prep Via for fast, professional preparation, ensuring they're handled with care and efficiency.",
   },
   {
     number: "03",
-    title: "Execute & Deliver",
+    title: "Prep & Ship",
     description:
-      "Our platform seamlessly integrates into your workflow, automating tasks and ensuring real, measurable growth.",
+      "Your products are prepped and shipped quickly to fulfillment centers, helping you save time and get your inventory listed faster.",
   },
   {
     number: "04",
-    title: "Track Results",
+    title: "Get Invoiced",
     description:
-      "Monitor your growth with detailed analytics and reporting, allowing you to see the direct impact on your business performance.",
+      "Receive an invoice with payment terms of 30 days after prep is completed, giving you flexibility to manage your cash flow confidently.",
   },
-]
+];
 
 const benefits = [
   {
     icon: DollarSign,
     title: "Improved Cash Flow",
-    description: "Pay 30 days after prep, freeing immediate cash for other business needs and opportunities.",
+    description:
+      "Pay 30 days after prep, freeing immediate cash for other business needs and opportunities.",
   },
   {
     icon: FileText,
     title: "Predictable Billing",
-    description: "Clear and transparent payment schedules help you plan your finances with confidence.",
+    description:
+      "Clear and transparent payment schedules help you plan your finances with confidence.",
   },
   {
     icon: TrendingUp,
     title: "Reduced Financial Pressure",
-    description: "Scale inventory without immediate upfront payments, reducing strain on your business finances.",
+    description:
+      "Scale inventory without immediate upfront payments, reducing strain on your business finances.",
   },
   {
     icon: BarChart4,
@@ -54,7 +57,7 @@ const benefits = [
     description:
       "Grow your business with minimal financial friction, allowing for faster expansion and increased profits.",
   },
-]
+];
 
 export default function PrepViaProfit() {
   return (
@@ -69,9 +72,10 @@ export default function PrepViaProfit() {
         </h2>
 
         <p className="text-base md:text-lg max-w-3xl mx-auto text-center text-gray-600 mb-4 sm:mb-8 px-2">
-          PrepViaProfit™ is an exclusive, cashflow-friendly service allowing qualified sellers to pay for inventory
-          preparation up to 30 days after products are shipped. Boost your cash flow, reduce upfront investment, and
-          scale your inventory effortlessly.
+          PrepViaProfit™ is an exclusive, cashflow-friendly service allowing
+          qualified sellers to pay for inventory preparation up to 30 days after
+          products are shipped. Boost your cash flow, reduce upfront investment,
+          and scale your inventory effortlessly.
         </p>
       </div>
 
@@ -92,11 +96,11 @@ export default function PrepViaProfit() {
             Simple 4-Step Process.
           </p>
         </div>
-         <ProcessSteps steps={processSteps} />
+        <ProcessSteps steps={processSteps} />
       </section>
 
       <section className="flex items-center justify-center">
-        <TabButtons title="Main Benifits" title2=""/>
+        <TabButtons title="Main Benifits" title2="" />
       </section>
 
       {/* Benefits Section */}
@@ -116,5 +120,5 @@ export default function PrepViaProfit() {
         imageSrc="/growth.png"
       />
     </div>
-  )
+  );
 }

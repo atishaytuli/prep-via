@@ -2,6 +2,7 @@
 import { Headphones } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -32,7 +33,11 @@ export default function ContactForm() {
 
   return (
     <section className="max-w-6xl mx-auto py-16 px-4 lg:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-12">
+      <motion.div 
+      initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-12">
         <div>
           <div className="mb-6">
             <Headphones className="h-8 w-8 text-gray-700" />
@@ -165,7 +170,7 @@ export default function ContactForm() {
             </button>
           </form>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

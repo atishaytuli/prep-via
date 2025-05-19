@@ -26,13 +26,13 @@ export default function Hero() {
 
   const paddingClass = isScrolled ? "py-4" : "py-6";
   return (
-    <main className=" container mx-auto bg-[linear-gradient(to_top_right,_#ccf1f6,_white,_#f9fafb,_#bfdbfe)]">
+    <main className="bg-[linear-gradient(to_top_right,_#ccf1f6,_white,_#f9fafb,_#bfdbfe)]">
       <Navbar paddingClass={paddingClass} />
-      <section className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-12">
+      <section className="container grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-12">
         <div className="w-full p-8 mt-8 md:mt-16 flex flex-col items-center justify-between rounded-3xl">
           <Badge variant="outline" className="text-xs md:text-sm py-2 md:mt-12">
             <span className="mr-2 text-primary">
-              <Badge className="bg-cyan-600/70">
+              <Badge className="bg-cyan-600/50">
                 <motion.span
                   style={{
                     display: "inline-block",

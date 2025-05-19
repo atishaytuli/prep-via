@@ -1,15 +1,49 @@
 "use client"
+import {motion} from "framer-motion"
 
 import { useState } from "react"
-import { Calculator, Download, FileUp, Search, ArrowRight } from "lucide-react"
+import { Calculator, Download, FileUp, Search, ArrowRight, Lock } from "lucide-react"
 import { FeatureItem } from "./feature-item"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog"
+import Link from "next/link"
 
 export default function CalculatorSection() {
   const [calculationType, setCalculationType] = useState<"asin" | "bulk">("asin")
   const [asinInput, setAsinInput] = useState("")
+  const [showPaywallModal, setShowPaywallModal] = useState(false)
+
+  // For demo purposes, set this to true to simulate a paid user
+  const isPaidUser = false
+
+  const handleCalculateClick = () => {
+    if (!isPaidUser) {
+      setShowPaywallModal(true)
+    } else {
+      // Handle calculation logic for paid users
+      console.log("Calculating for ASIN:", asinInput)
+      // Actual calculation logic would go here
+    }
+  }
+
+  const handleBulkUploadClick = () => {
+    if (!isPaidUser) {
+      setShowPaywallModal(true)
+    } else {
+      // Handle bulk upload logic for paid users
+      console.log("Handling bulk upload")
+      // Actual upload logic would go here
+    }
+  }
 
   return (
     <section className="mb-16 relative">
@@ -71,7 +105,7 @@ export default function CalculatorSection() {
                               onChange={(e) => setAsinInput(e.target.value)}
                               className="flex-1"
                             />
-                            <Button className="bg-cyan-600 hover:bg-cyan-700">
+                            <Button className="bg-cyan-600 hover:bg-cyan-700" onClick={handleCalculateClick}>
                               Calculate <ArrowRight className="ml-2 h-4 w-4" />
                             </Button>
                           </div>
@@ -88,10 +122,14 @@ export default function CalculatorSection() {
                           Download our Excel worksheet, list your ASINs, and upload it back for bulk calculation.
                         </p>
                         <div className="flex flex-wrap gap-3">
-                          <Button variant="outline" className="text-cyan-600 border-cyan-200 hover:bg-cyan-50">
+                          <Button
+                            variant="outline"
+                            className="text-cyan-600 border-cyan-200 hover:bg-cyan-50"
+                            onClick={handleCalculateClick}
+                          >
                             <Download className="mr-2 h-4 w-4" /> Download Worksheet
                           </Button>
-                          <Button className="bg-cyan-600 hover:bg-cyan-700">
+                          <Button className="bg-cyan-600 hover:bg-cyan-700" onClick={handleBulkUploadClick}>
                             <FileUp className="mr-2 h-4 w-4" /> Upload Worksheet
                           </Button>
                         </div>
@@ -99,7 +137,7 @@ export default function CalculatorSection() {
                     )}
                   </div>
 
-                  <div className="space-x-2 spacr-y-2 flex flex-col md:flex-row">
+                  <div className="w-full md:space-x-4 space-y-2 flex flex-col md:flex-row md:justify-between items-center">
                     <FeatureItem
                       icon={<Search className="h-5 w-5 text-cyan-600 flex-shrink-0" />}
                       title="Instant ASIN-Based Calculation"
@@ -113,16 +151,82 @@ export default function CalculatorSection() {
                     />
                   </div>
                 </div>
-                <div className="hidden md:flex items-center justify-center">
-                  <div className="bg-cyan-50 p-5 rounded-full">
-                    <Calculator className="h-6 w-6 text-cyan-600" />
+                <div className="flex flex-row items-center gap-1 justify-center relative">
+                                    <div className="bg-[#e5b9083c] rounded-full border border-[#E5B808] text-black text-xs px-2 py-0.5 flex items-center gap-1">
+                                    <motion.span
+                  style={{
+                    display: "inline-block",
+                    transformOrigin: "bottom center",
+                  }}
+                  animate={{
+                    rotate: [0, 12, -12, 12, -12, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <Lock className="h-3 w-3" />
+                </motion.span>
+                    
+                    <span>For Paid users</span>
                   </div>
+
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Paywall Modal */}
+      <Dialog open={showPaywallModal} onOpenChange={setShowPaywallModal}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2 text-xl">
+              <Lock className="h-5 w-5 text-cyan-600" />
+              Premium Feature
+            </DialogTitle>
+            <DialogDescription className="text-base pt-2">
+              This calculator is available exclusively for paid users.
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="bg-cyan-50 p-4 rounded-lg my-2">
+            <h3 className="font-medium text-gray-900 mb-2">Upgrade to access:</h3>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-2">
+                <div className="rounded-full bg-cyan-100 p-1 mt-0.5">
+                  <Calculator className="h-3.5 w-3.5 text-cyan-600" />
+                </div>
+                <span className="text-sm text-gray-700">Instant cost calculations for any Amazon product</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <div className="rounded-full bg-cyan-100 p-1 mt-0.5">
+                  <FileUp className="h-3.5 w-3.5 text-cyan-600" />
+                </div>
+                <span className="text-sm text-gray-700">Bulk calculations for multiple ASINs at once</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <div className="rounded-full bg-cyan-100 p-1 mt-0.5">
+                  <Download className="h-3.5 w-3.5 text-cyan-600" />
+                </div>
+                <span className="text-sm text-gray-700">Downloadable reports and cost breakdowns</span>
+              </li>
+            </ul>
+          </div>
+
+          <DialogFooter className="sm:justify-center gap-3 mt-2">
+            <Button variant="outline" onClick={() => setShowPaywallModal(false)} className="border-gray-300">
+              Maybe Later
+            </Button>
+            <Button className="bg-cyan-600 hover:bg-cyan-700" onClick={() => setShowPaywallModal(false)} asChild>
+              <Link href="/pricing">View Pricing Plans</Link>
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </section>
   )
 }

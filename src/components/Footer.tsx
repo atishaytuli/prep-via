@@ -135,10 +135,10 @@ const Footer = () => {
 
               <div className="flex flex-col">
                 <h4 className="font-medium mb-3 text-gray-800">Contact</h4>
-                <p className="text-cyan-600 font-medium mb-2">+1 (786) 899-7286</p>
-                <p className="text-gray-600 mb-2">
-                  Contact@prepvia.com
+                <p className="text-cyan-600 font-medium mb-2">
+                  +1 (786) 899-7286
                 </p>
+                <p className="text-gray-600 mb-2">Contact@prepvia.com</p>
                 <p className="text-gray-600">Hialeah, FL 33010, USA</p>
               </div>
             </div>

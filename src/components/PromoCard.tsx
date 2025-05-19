@@ -1,9 +1,14 @@
 "use client";
+import { motion } from "framer-motion";
 
 export default function PromoCard() {
   return (
     <div className="max-w-5xl mx-auto px-4 py-10">
-      <div
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         className="rounded-3xl overflow-hidden"
         style={{
           background: "linear-gradient(90deg, #0ea5e9 0%, #22d3ee 100%)",
@@ -83,7 +88,7 @@ export default function PromoCard() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

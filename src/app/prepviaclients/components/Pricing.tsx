@@ -75,13 +75,13 @@ export default function PricingSection() {
 // Pricing plans data
 const pricingPlans: PricingPlan[] = [
   {
-    name: "Silver Plan (Standard)",
+    name: "Standard Plan",
     description: "Monthly Fee: $70 (Amazon Sellers Only)",
     subDescription: "Standard Prep Pricing + 48hr Turnaround",
     icon: "Users",
     price: {
-      monthly: 70,
-      yearly: 70 * 12 * 0.8, // 20% discount for yearly
+      monthly: 50,
+      yearly: 50 * 12 * 0.8,
     },
     features: [
       { text: "Standard Prep Pricing", included: true },
@@ -92,7 +92,7 @@ const pricingPlans: PricingPlan[] = [
   {
     name: "Gold Plan",
     description: "Monthly Fee: $70 (Amazon Sellers Only)",
-    subDescription: "1,000+ units/month + 5% discount",
+    subDescription: "+ 5% discount From requirements 1,000+ units/month",
     icon: "Sparkles",
     isPopular: true,
     iconBgClass: "bg-yellow-50",
@@ -111,19 +111,20 @@ const pricingPlans: PricingPlan[] = [
     ],
   },
   {
-    name: "Platinum Plan",
-    description: "Monthly Fee: $70 (Amazon Sellers Only)",
-    subDescription: "2,500+ units/month + 10% discount",
+    name: "Big Game Plan",
+    description: "Full Customize Plan - No membership fee",
+    subDescription: "5000+ units/month + 10% discount",
     icon: "Bell",
+        isbig: true,
     iconBgClass: "bg-purple-50",
     iconColorClass: "text-purple-600",
     checkIconColorClass: "text-purple-500",
     price: {
-      monthly: 70,
-      yearly: 70 * 12 * 0.8,
+      monthly: "Custom Plan",
+      yearly: 0,
     },
     features: [
-      { text: "Minimum 2,500 units/month", included: true },
+      { text: "Minimum 5000 units/month", included: true },
       { text: "10% Discount on Prep (excl. add-ons)", included: true },
       { text: "Guaranteed 48-hour Prep Turnaround", included: true },
       { text: "Highest Priority Support (Dedicated Manager)", included: true },

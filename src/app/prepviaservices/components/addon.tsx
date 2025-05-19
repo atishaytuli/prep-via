@@ -115,7 +115,7 @@ export default function AddOnServicesSection() {
               </div>
               <div className="relative h-64 md:h-auto">
                 <Image
-                  src="/20250514_2145_Barcode Scanning Parcel_simple_compose_01jv94494vfg68qbt3z2w87h86.png"
+                  src="/20250519_0006_Parcel Prep Solutions_simple_compose_01jvknqwf1eac8fdjhvkxxjpaw.png"
                   alt="Professional packaging services"
                   fill
                   className="object-cover"

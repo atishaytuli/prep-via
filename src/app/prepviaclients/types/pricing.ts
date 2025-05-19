@@ -9,10 +9,11 @@ export interface PricingPlan {
   subDescription?: string
   icon: string
   price: {
-    monthly: number
-    yearly: number
+    monthly: number | string
+    yearly: number | string
   }
   isPopular?: boolean
+  isbig?: boolean
   features: PricingFeature[]
   iconBgClass?: string
   iconColorClass?: string

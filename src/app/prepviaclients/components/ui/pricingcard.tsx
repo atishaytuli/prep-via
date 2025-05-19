@@ -28,7 +28,7 @@ export default function PricingCard({ plan, billingPeriod }: PricingCardProps) {
   return (
     <div
       className={`${
-        plan.isPopular ? "border-2 border-cyan-500" : "border border-gray-200"
+        plan.isPopular || plan.isbig ? "border-2 border-cyan-500" : "border border-gray-200"
       } rounded-xl p-6 flex flex-col h-full relative`}
     >
       <div
@@ -44,13 +44,13 @@ export default function PricingCard({ plan, billingPeriod }: PricingCardProps) {
         <div className="text-xs text-gray-500">From</div>
         <div className="mb-6">
           <span className="text-4xl font-bold">{priceText}</span>
-          <span className="text-gray-500 ml-1">seat/mon</span>
+           {!plan.isbig && <span className="text-gray-500 ml-1">seat/mon</span>}
         </div>
       </div>
 
       <button
         className={`w-full py-2 px-4 ${
-          plan.isPopular
+          plan.isPopular || plan.isbig
             ? "bg-cyan-500 text-white hover:bg-cyan-600"
             : "border border-gray-300 text-gray-700 hover:bg-gray-50"
         } rounded-full font-medium transition-colors mb-6`}

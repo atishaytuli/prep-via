@@ -116,7 +116,7 @@ body {
 
 @media (max-width: 768px) {
   .phone-img {
-    transform: translate(7%, 50%);
+    transform: translate(7%, 55%);
   }
 }
 @media (min-width: 769px) {
