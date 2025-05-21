@@ -89,10 +89,10 @@ export default function PrepViaProfit() {
       {/* Steps */}
       <section className="py-8 sm:py-16 px-4 md:px-8 max-w-5xl mx-auto">
         <div className=" mb-20">
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-2">
+          <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-2 font-poppins">
             How PrepViaProfit™ Works
           </h2>
-          <p className="text-3xl md:text-4xl font-semibold text-cyan-500">
+          <p className="text-3xl md:text-4xl font-semibold text-cyan-600 font-poppins">
             Simple 4-Step Process.
           </p>
         </div>

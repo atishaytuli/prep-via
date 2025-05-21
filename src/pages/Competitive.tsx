@@ -104,7 +104,7 @@ const Competitive = () => {
                 innovative solutions.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-primary-cyan px-4 py-1 rounded-full text-white flex items-center gap-2 hover:bg-[#36a745] transition-colors">
+                <button className="bg-primary-cyan px-4 py-1 rounded-full text-white flex items-center gap-2 hover:bg-[#36a745] hover:scale-95 transition-all duration-200">
                   <span>{"Let's Chat"}</span>
                   <svg
                     viewBox="0 0 46 46"

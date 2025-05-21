@@ -28,10 +28,10 @@ export default function ContactPage() {
       <main className="flex-grow container mx-auto px-4 md:px-6 py-8 md:py-16">
         <div className="max-w-4xl mx-auto mt-16 sm:mt-24 md:mt-32">
           <div className="text-center mb-12">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold font-inter mb-4 sm:mb-6">
-              {"We're"} here to <span className="text-cyan-600 font-light italic ">Help !</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl text-gray-800 font-semibold font-inter mb-4 sm:mb-6">
+              {"We're"} here to <span className="text-cyan-600 font-light font-serif italic ">Help!</span>
             </h1>
-            <p className="text-gray-600 sm:text-lg max-w-3xl mx-auto">
+            <p className="text-gray-600 max-w-3xl mx-auto">
               Reach out to our friendly, expert team for any questions, assistance, or a custom quote tailored
               specifically to your needs. Our dedicated support team is ready to help you optimize your logistics and
               accelerate your e-commerce growth.

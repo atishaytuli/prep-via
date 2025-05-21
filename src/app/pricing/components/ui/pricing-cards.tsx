@@ -74,13 +74,13 @@ export default function PricingCard({ plan, billingPeriod }: PricingCardProps) {
           ))}
         </ul>
         <button
-          className={`w-full py-2.5 px-4 rounded-lg font-medium transition-colors
+          className={`w-full py-2.5 px-4 rounded-lg font-medium hover:scale-95 transition-all duration-200
     ${
       plan.isbig
-        ? "bg-cyan-600 text-white hover:bg-cyan-700"
+        ? "bg-cyan-600 text-white "
         : plan.isPopular
-        ? "bg-cyan-600 text-white hover:bg-cyan-700"
-        : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+        ? "bg-cyan-600 text-white "
+        : "bg-gray-100 text-gray-800"
     }
   `}
         >

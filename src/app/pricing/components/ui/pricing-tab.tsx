@@ -47,29 +47,68 @@ export default function PricingTabs({
               onValueChange={handleTabChange}
               className="w-fit"
             >
-              <TabsList className="bg-white p-0.5 rounded-full border border-gray-200 shadow-sm">
-                <TabsTrigger
-                  value="subscription"
-                  className="rounded-full text-xs px-4 py-2 text-gray-700 font-medium 
-                  data-[state=active]:bg-cyan-600/80 
-                  data-[state=active]:text-white 
-                  data-[state=active]:shadow-sm"
+              <TabsList className="bg-white p-0.5 rounded-full border border-gray-200 shadow-sm flex gap-1">
+                {/* Subscription Plans Tab */}
+                <motion.div
+                  animate={
+                    activeTab !== "subscription"
+                      ? { rotate: [0, -2, 2, -1, 1, 0] }
+                      : {}
+                  }
+                  transition={
+                    activeTab !== "subscription"
+                      ? {
+                          duration: 1.2,
+                          ease: "easeInOut",
+                          repeat: Infinity,
+                          repeatDelay: 3,
+                        }
+                      : {}
+                  }
                 >
-                  Subscription Plans
-                </TabsTrigger>
-                <TabsTrigger
-                  value="services"
-                  className="rounded-full text-xs px-4 py-2 flex items-center gap-1.5 text-gray-700 font-medium 
-                  data-[state=active]:bg-gray-100 
-                  data-[state=active]:text-black 
-                  data-[state=active]:shadow-sm"
+                  <TabsTrigger
+                    value="subscription"
+                    className="rounded-full text-xs px-4 py-2 text-gray-700 font-medium bg-cyan-50 
+        data-[state=active]:bg-cyan-600/80 
+        data-[state=active]:text-white 
+        data-[state=active]:shadow-sm"
+                  >
+                    Subscription Plans
+                  </TabsTrigger>
+                </motion.div>
+
+                {/* Service Pricing Tab */}
+                <motion.div
+                  animate={
+                    activeTab !== "services"
+                      ? { rotate: [0, -2, 2, -1, 1, 0] }
+                      : {}
+                  }
+                  transition={
+                    activeTab !== "services"
+                      ? {
+                          duration: 1.2,
+                          ease: "easeInOut",
+                          repeat: Infinity,
+                          repeatDelay: 3,
+                        }
+                      : {}
+                  }
                 >
-                  <Sparkles
-                    className="h-3.5 w-3.5 text-cyan-600"
-                    fill="currentColor"
-                  />
-                  Service Pricing
-                </TabsTrigger>
+                  <TabsTrigger
+                    value="services"
+                    className="rounded-full text-xs px-4 py-2 flex items-center gap-1.5 text-gray-700 font-medium bg-cyan-50 
+        data-[state=active]:bg-gray-100 
+        data-[state=active]:text-black 
+        data-[state=active]:shadow-sm"
+                  >
+                    <Sparkles
+                      className="h-3.5 w-3.5 text-cyan-600"
+                      fill="currentColor"
+                    />
+                    Service Pricing
+                  </TabsTrigger>
+                </motion.div>
               </TabsList>
             </Tabs>
           </div>

@@ -74,7 +74,7 @@ export default function WhyChooseSection() {
                 Ready to elevate your logistics operations?
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-cyan-500 px-4 py-1 rounded-full text-white hover:bg-cyan-600 transition-colors">
+                <button className="bg-cyan-600 px-4 py-1 rounded-full text-white hover:scale-95 transition-all duration-200">
                   <span>Join PrepVia Now</span>
                 </button>
                 <a

@@ -26,14 +26,14 @@ export default function PromoCard() {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Button
-                className="bg-white text-cyan-600 hover:bg-gray-100 font-medium py-2.5 px-6 rounded-full border-none h-auto"
+                className="bg-white text-cyan-600 hover:bg-white hover:scale-95 transition-all duration-200 font-medium py-2.5 px-6 rounded-full border-none h-auto"
                 size="lg"
               >
                 Request a Custom Quote <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
 
                             <Button
-                className="bg-white text-cyan-600 hover:bg-gray-100 font-medium py-2.5 px-6 rounded-full border-none h-auto"
+                className="bg-white text-cyan-600 hover:bg-white hover:scale-95 transition-all duration-200 font-medium py-2.5 px-6 rounded-full border-none h-auto"
                 size="lg"
               >
                 Schedule Your Free Consultation <ExternalLink className="ml-2 h-4 w-4" />

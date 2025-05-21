@@ -23,7 +23,7 @@ export function EligibilitySection({ title, description, imageSrc }: Eligibility
             <p className="text-white/90 text-sm sm:text-base md:text-lg mb-8 sm:mb-10 max-w-2xl">{description}</p>
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
-              <button className="flex gap-3 bg-white text-cyan-600 font-medium py-2.5 px-6 rounded-full hover:bg-gray-100 transition-colors">
+              <button className="flex gap-3 bg-white text-cyan-600 font-medium py-2.5 px-6 rounded-full hover:scale-95 transition-all duration-200">
                 Apply Now
               </button>
               <a href="#" className="group flex items-center justify-center py-3 px-1">

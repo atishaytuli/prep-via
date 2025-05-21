@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import PricingCard from "../components/ui/pricingcard";
@@ -9,9 +8,7 @@ import type { PricingPlan } from "./../types/pricing";
 import { TabButtons } from "@/components/Tabbutton";
 
 export default function PricingSection() {
-  const [billingPeriod] = useState<"monthly" | "yearly">(
-    "monthly"
-  );
+  const [billingPeriod] = useState<"monthly" | "yearly">("monthly");
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -37,7 +34,7 @@ export default function PricingSection() {
             pricing and no hidden fees.
           </p>
 
-           <TabButtons title="Month" title2="Yearly" />
+          <TabButtons title="Monthly" title2="" />
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -55,17 +52,17 @@ export default function PricingSection() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-gray-500 mb-6 text-lg font-semibold">
+        <div className="text-center mt-16 flex justify-center items-center max-w-2xl mx-auto">
+          <p className="w-1/2 text-gray-500 mb-6 text-base text-left">
             Need a custom solution? Contact our sales team for a tailored
             package.
           </p>
-          <Link
-            href="/contact"
-            className="text-white bg-cyan-600 rounded-full py-3 px-6 font-medium inline-flex items-center"
-          >
-            Contact Sales <ArrowRight className="ml-1 h-4 w-4" />
-          </Link>
+          <button className="bg-cyan-600 text-white rounded-full px-4 py-2 flex items-center justify-between transition-all duration-200 font-medium hover:scale-95 ">
+            <span className="mr-2">Contact Sales</span>
+            <div className="bg-white rounded-full p-1.5">
+              <ArrowRight className="h-3.5 w-3.5 text-black" />
+            </div>
+          </button>
         </div>
       </div>
     </section>
@@ -115,7 +112,7 @@ const pricingPlans: PricingPlan[] = [
     description: "Full Customize Plan - No membership fee",
     subDescription: "5000+ units/month + 10% discount",
     icon: "Bell",
-        isbig: true,
+    isbig: true,
     iconBgClass: "bg-purple-50",
     iconColorClass: "text-purple-600",
     checkIconColorClass: "text-purple-500",

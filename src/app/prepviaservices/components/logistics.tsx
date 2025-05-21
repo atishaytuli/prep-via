@@ -4,7 +4,7 @@ export default function LogisticsStorageSection() {
   return (
     <section className="py-16 pt-8 bg-gray-50 max-w-7xl mx-auto">
       <div className="container px-6 mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 pt-6 my-4 font-inter text-center">Logistics & <span className="italic font-light text-cyan-600 relative font-serif">Storage</span> Services</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 pt-6 my-4 font-inter text-center">Logistics & <span className="italic font-light text-cyan-600 relative font-serif">Storage</span> Services</h2>
         <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
           Comprehensive logistics solutions to streamline your supply chain
         </p>

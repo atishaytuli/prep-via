@@ -55,7 +55,7 @@ export default function MembershipCard() {
                   <div className="flex px-6 pb-4 sm:px-8">
                     <a
                       aria-describedby="tier-company"
-                      className="flex items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-cyan-600 border-2 border-cyan-600 rounded-full nline-flex hover:bg-transparent hover:border-cyan-600 hover:text-cyan-600 focus:outline-none focus-visible:outline-cyan-600 text-sm focus-visible:ring-cyan-600"
+                      className="flex items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-cyan-600 border-2 border-cyan-600 rounded-full nline-flex hover:scale-95 focus:outline-none focus-visible:outline-cyan-600 text-sm focus-visible:ring-cyan-600"
                       href="#"
                     >
                       Get started

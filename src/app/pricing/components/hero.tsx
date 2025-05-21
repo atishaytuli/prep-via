@@ -15,7 +15,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="text-5xl font-semibold text-gray-900 mb-6 font-inter"
           >
-            PrepVia Cost <span className="text-cyan-600 font-light italic">Calculation.</span>
+            PrepVia Cost <span className="text-cyan-600 font-light font-serif italic">Calculation.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

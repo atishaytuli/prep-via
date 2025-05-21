@@ -164,7 +164,7 @@ export default function ContactForm() {
 
             <button
               type="submit"
-              className="w-full bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-gray-700 transition-colors"
+              className="w-full bg-cyan-600 text-white py-2 px-4 rounded-lg hover:bg-primary-cyan hover:bg-gray-700 transition-colors"
             >
               Submit
             </button>

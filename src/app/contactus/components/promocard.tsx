@@ -1,5 +1,5 @@
 "use client";
-import { Instagram, Linkedin } from "lucide-react";
+import { ArrowRight, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function PromoCard() {
@@ -38,10 +38,10 @@ export default function PromoCard() {
 
             <div className="flex flex-col sm:flex-row gap-6 md:gap-8">
               <Button
-                className="bg-white text-cyan-600 hover:bg-gray-100 font-medium py-2.5 px-6 rounded-full border-none h-auto"
+                className="bg-white text-cyan-600 hover:scale-95 hover:bg-white transition-all duration-200 font-medium py-2.5 px-6 rounded-full border-none h-auto"
                 size="lg"
               >
-                Schedule a call now
+                Schedule a call now <ArrowRight className="h-3.5 w-3.5 text-cyan-600" />
               </Button>
               <div className="flex gap-4">
                 {socialLinks.map((link, index) => (
@@ -50,7 +50,7 @@ export default function PromoCard() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-white rounded-full hover:bg-gray-100 transition-colors"
+                    className="p-3 bg-gray-100 rounded-full hover:bg-gray-100 transition-colors"
                     aria-label={link.name}
                   >
                     {link.icon}

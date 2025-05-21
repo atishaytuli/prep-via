@@ -96,9 +96,9 @@ export default function AddOnServicesSection() {
 
         {/* Added packaging image with cleaner design */}
         <div className="mt-16 max-w-4xl mx-auto ">
-          <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+          <div className="bg-gray-50 shadow-inner rounded-3xl  overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="p-8 flex flex-col justify-center">
+              <div className="p-12 flex flex-col justify-center">
                 <h3 className="text-xl font-bold text-gray-800 mb-4">
                   Professional Packaging Solutions
                 </h3>

@@ -13,11 +13,11 @@ const Footer = () => {
             <span>the smarter</span>
             <Link
               href="/contact"
-              className="bg-primary-cyan/70 text-black rounded-full px-1 md:px-2 py-2 flex items-center justify-center gap-4 font-medium hover:scale-95 transition-all duration-300 text-lg md:text-xl self-center whitespace-nowrap lg:mt-4"
+              className="bg-cyan-600 text-white rounded-full px-1 md:px-2 py-2 flex items-center justify-center gap-4 font-medium hover:scale-95 transition-all duration-300 text-lg md:text-xl self-center whitespace-nowrap lg:mt-4"
             >
               <span className="ml-4 italic">Prep</span>
-              <div className="bg-black rounded-full p-2">
-                <ArrowRight className="h-3.5 w-3.5 text-white" />
+              <div className="bg-white rounded-full p-2">
+                <ArrowRight className="h-3.5 w-3.5 text-black" />
               </div>
             </Link>
             <span className="italic">solutions!</span>
