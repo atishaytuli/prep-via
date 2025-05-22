@@ -95,7 +95,7 @@ const Navbar = ({ paddingClass }: NavbarProps) => {
                   isActive("/blogs") ? "bg-cyan-600/10 rounded-full" : ""
                 } px-3 py-1.5 text-gray-700 hover:text-black hover:scale-95 transition-all duration-200 cursor-pointer`}
               >
-                <Link href="/blogs">Blog</Link>
+                <Link href="/blogs">Blogs</Link>
               </li>
               <li
                 className={`${
@@ -137,38 +137,38 @@ const Navbar = ({ paddingClass }: NavbarProps) => {
         {/* Mobile menu dropdown - Visible on all screens below large when open */}
         {isOpen && (
           <div className="lg:hidden bg-white rounded-2xl mt-1 pt-4 pb-6 px-6 shadow-md animate-in fade-in fade-out transition-all duration-300">
-            <ul className="flex flex-col space-y-4 font-poppins">
-              <li
-                className={`group relative overflow-hidden px-3 py-1.5 font-semibold transition-all duration-200 cursor-pointer ${
-                  isActive("/prepviaprofits")
-                    ? "bg-cyan-600/10 rounded-full border border-cyan-300"
-                    : "bg-[#e5b9083c] rounded-full border border-[#E5B808]"
-                }`}
-              >
-                <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 bg-amber-500 opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-40"></span>
-                {/* Hover shimmer animation */}
-                <span className="absolute right-0 top-0 h-full w-12 translate-x-12 rotate-12 bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-40 pointer-events-none"></span>
-
-                <Link
-                  href="/prepviaprofits"
-                  className="inline-flex items-center text-gray-700 space-x-1 z-10 relative"
+            <ul className="flex flex-col space-y-4 font-poppins w-fit">
+              <li className="p-[1px] rounded-full bg-gradient-to-r from-[#E5B808] via-[#b4b4ff] to-cyan-400 hover:scale-95 transition-all duration-300">
+                <div
+                  className={`group relative overflow-hidden px-3 py-1.5 font-semibold transition-all duration-200 cursor-pointer rounded-full w-full h-full ${
+                    isActive("/prepviaprofits") ? "bg-blue-50" : "bg-[#fff8dc]"
+                  }`}
                 >
-                  <span className="z-10">PrepVia Profits</span>
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{
-                      repeat: Number.POSITIVE_INFINITY,
-                      duration: 10,
-                      ease: "linear",
-                    }}
-                    className="h-3 w-3 text-cyan-500 align-super z-10"
+                  {/* Hover shimmer animation */}
+                  <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 bg-amber-500 opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-40"></span>
+                  <span className="absolute right-0 top-0 h-full w-12 translate-x-12 rotate-12 bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-40 pointer-events-none"></span>
+
+                  <Link
+                    href="/prepviaprofits"
+                    className="inline-flex items-center text-gray-700 space-x-1 z-10 relative"
                   >
-                    <Sparkles
-                      className="h-3 w-3 text-[#E5B808] align-super"
-                      fill="currentColor"
-                    />
-                  </motion.div>
-                </Link>
+                    <span className="z-10">PrepVia Profits</span>
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{
+                        repeat: Number.POSITIVE_INFINITY,
+                        duration: 10,
+                        ease: "linear",
+                      }}
+                      className="h-3 w-3 text-cyan-500 align-super z-10"
+                    >
+                      <Sparkles
+                        className="h-3 w-3 text-[#E5B808] align-super"
+                        fill="currentColor"
+                      />
+                    </motion.div>
+                  </Link>
+                </div>
               </li>
               <li
                 className={`${
@@ -189,7 +189,7 @@ const Navbar = ({ paddingClass }: NavbarProps) => {
                   isActive("/blogs") ? "bg-cyan-600/10 rounded-full" : ""
                 } px-3 py-2 text-gray-700 hover:text-black transition-colors duration-200`}
               >
-                <Link href="/blogs">Blog</Link>
+                <Link href="/blogs">Blogs</Link>
               </li>
               <li
                 className={`${
