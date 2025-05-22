@@ -21,7 +21,7 @@ const faqData = [
   {
     question: "When do I have to pay?",
     answer:
-      "You only pay after your inventory is prepped and ready to go. No upfront fees – we prep, then you pay. Simple and stress-free.",
+      "With PrepVia Profit, you only pay 30 days after your products anre prepped, without Prepvia Profit you only pay after your inventory is prepped and ready to go. No Upfront fees - We prep, then you pay. Simple and stress-free.",
   },
   {
     question: "How much time does the prep take?",

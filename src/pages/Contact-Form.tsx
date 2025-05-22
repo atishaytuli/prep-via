@@ -110,7 +110,7 @@ export default function ContactForm() {
                 htmlFor="industry"
                 className="block text-sm font-medium text-gray-700 mb-1"
               >
-                Service Type
+                Monthly Units Sold
               </label>
               <div className="relative">
                 <div className="relative">
@@ -119,16 +119,16 @@ export default function ContactForm() {
                     name="industry"
                     value={formData.industry}
                     onChange={handleChange}
-                    className="w-full appearance-none bg-white px-4 py-3 pr-10 rounded-lg border border-gray-300 shadow-sm text-sm text-gray-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+                    className="w-full appearance-none bg-cyan-600/10 px-4 py-3 pr-10 rounded-lg border border-gray-300 shadow-sm text-sm text-gray-800 focus:border-cyan-600 focus:ring-1 focus:ring-cyan-600 focus:outline-none transition "
                   >
                     <option value="" disabled>
-                      Select a service...
+                      Select number of units...
                     </option>
-                    <option value="wholesale">Wholesale</option>
-                    <option value="private-label">Private Label</option>
-                    <option value="bundling">Kitting & Bundling</option>
-                    <option value="returns">Returns Management</option>
-                    <option value="other">Other</option>
+                    <option value="wholesale">0 - 500</option>
+                    <option value="private-label">501 - 1000</option>
+                    <option value="bundling">1001 - 2500</option>
+                    <option value="returns">2501 - 5000</option>
+                    <option value="other">5000 +</option>
                   </select>
                 </div>
 

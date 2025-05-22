@@ -1,87 +1,96 @@
 "use client";
 
 import React, { useRef } from "react";
-import { Crown, Zap, Settings } from "lucide-react";
+import { Crown, Zap, Settings, WarehouseIcon, MapPin, Barcode, Clock, PackageCheck, Boxes, Store, Eye } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TabButtons } from "@/components/Tabbutton";
 
 const Competitive = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const features = [
-    {
-      icon: <Zap className="h-5 w-5" />,
-      title: "Strategic Florida Location",
-      description:
-        "Conveniently located close to major ports in Florida and South Carolina, enabling ultra-fast check-ins and shipping. LTL shipments checked in within 4 business days, and same-day check-in for FTL.",
-      color: "text-cyan-600",
-      bgColor: "bg-cyan-100",
-      lightBgColor: "bg-cyan-600/10",
-    },
-    {
-      icon: <Crown className="h-5 w-5" />,
-      title: "Faster Inventory Checked With 2D Barcodes",
-      description:
-        "Prep Via utilizes advanced 2D barcode technology, ensuring priority Amazon check-in, reduced placement fees, fewer errors, and faster availability for your products.",
-      color: "text-cyan-600",
-      bgColor: "bg-cyan-100",
-      lightBgColor: "bg-cyan-600/10",
-    },
-    {
-      icon: <Settings className="h-5 w-5" />,
-      title: "Rapid 48-Hour Prep",
-      description:
-        "Your products are guaranteed to be prepped and shipped within 48 hours, ensuring maximum efficiency and customer satisfaction.",
-      color: "text-cyan-600",
-      bgColor: "bg-cyan-100",
-      lightBgColor: "bg-cyan-600/10",
-    },
-    {
-      icon: <Settings className="h-5 w-5" />,
-      title: "Tech-Driven Labeling & Packing",
-      description:
-        "Featuring Prep Via’s proprietary LabelShot™ and MagLabel™ technologies, we streamline labeling and packing to unmatched speed and accuracy.",
-      color: "text-cyan-600",
-      bgColor: "bg-cyan-100",
-      lightBgColor: "bg-cyan-600/10",
-    },
-    {
-      icon: <Settings className="h-5 w-5" />,
-      title: "Transparent & Predictable Pricing",
-      description:
-        "Enjoy clear, upfront costs with our automated pricing calculations, eliminating surprise fees and hidden expenses.",
-      color: "text-cyan-600",
-      bgColor: "bg-cyan-100",
-      lightBgColor: "bg-cyan-600/10",
-    },
-    {
-      icon: <Settings className="h-5 w-5" />,
-      title: "Dedicated Warehouse for Standard Size Items",
-      description:
-        "Our specialized warehouse in Homestead, FL - just 70 miles from key logistics hubs - provides optimized handling specifically for standard-size inventory, accelerating your fulfillment cycle..",
-      color: "text-cyan-600",
-      bgColor: "bg-cyan-100",
-      lightBgColor: "bg-cyan-600/10",
-    },
-    {
-      icon: <Crown className="h-5 w-5" />,
-      title: "Multi-Marketplace Fulfillment",
-      description:
-        "Seamless preparation and fulfillment for Amazon, Walmart, eBay, Shopify, Etsy, WooCommerce, and more—expand effortlessly into new sales channels.",
-      color: "text-cyan-600",
-      bgColor: "bg-cyan-100",
-      lightBgColor: "bg-cyan-600/10",
-    },
-    {
-      icon: <Crown className="h-5 w-5" />,
-      title: "Real-Time Inventory Control",
-      description:
-        "Gain full visibility of your inventory status with live updates, keeping you informed at all times.",
-      color: "text-cyan-600",
-      bgColor: "bg-cyan-100",
-      lightBgColor: "bg-cyan-600/10",
-    },
-  ];
+const features = [
+  {
+    icon: <MapPin className="h-5 w-5" />, // Location-based
+    title: "Strategic Florida Location",
+    description:
+      "Conveniently located close to major ports in Florida and South Carolina, enabling ultra-fast check-ins and shipping. LTL shipments checked in within 4 business days, and same-day check-in for FTL.",
+    color: "text-cyan-600",
+    bgColor: "bg-cyan-100",
+    lightBgColor: "bg-cyan-600/10",
+  },
+  {
+    icon: <WarehouseIcon className="h-5 w-5" />,
+    title: "Dedicated Warehouse for Standard Size Items",
+    description:
+      "Our specialized warehouse in Homestead, FL -just 70 miles from key logistics hubs- provides optimized handling specifically for standard-size inventory, accelerating your fulfillment cycle.",
+    color: "text-cyan-600",
+    bgColor: "bg-cyan-100",
+    lightBgColor: "bg-cyan-600/10",
+  },
+  {
+    icon: <Barcode className="h-5 w-5" />,
+    title: "Faster Inventory Checked With 2D Barcodes",
+    description:
+      "Prep Via utilizes advanced 2D barcode technology, ensuring priority Amazon check-in, reduced placement fees, fewer errors, and faster availability for your products.",
+    color: "text-cyan-600",
+    bgColor: "bg-cyan-100",
+    lightBgColor: "bg-cyan-600/10",
+  },
+  {
+    icon: <Clock className="h-5 w-5" />,
+    title: "Rapid 48-Hour Prep",
+    description:
+      "Your products are guaranteed to be prepped and shipped within 48 hours, ensuring maximum efficiency and customer satisfaction.",
+    color: "text-cyan-600",
+    bgColor: "bg-cyan-100",
+    lightBgColor: "bg-cyan-600/10",
+  },
+  {
+    icon: <PackageCheck className="h-5 w-5" />,
+    title: "Tech-Driven Labeling & Packing",
+    description:
+      "Featuring Prep Via’s proprietary LabelShot™ and MagLabel™ technologies, we streamline labeling and packing to unmatched speed and accuracy.",
+    color: "text-cyan-600",
+    bgColor: "bg-cyan-100",
+    lightBgColor: "bg-cyan-600/10",
+  },
+  {
+    icon: <Crown className="h-5 w-5" />,
+    title: "Transparent & Predictable Pricing",
+    description:
+      "Enjoy clear, upfront costs with our automated pricing calculations, eliminating surprise fees and hidden expenses.",
+    color: "text-cyan-600",
+    bgColor: "bg-cyan-100",
+    lightBgColor: "bg-cyan-600/10",
+  },
+  {
+    icon: <Boxes className="h-5 w-5" />,
+    title: "Dedicated Warehouse for Standard Size Items",
+    description:
+      "Our specialized warehouse in Homestead, FL - just 70 miles from key logistics hubs - provides optimized handling specifically for standard-size inventory, accelerating your fulfillment cycle.",
+    color: "text-cyan-600",
+    bgColor: "bg-cyan-100",
+    lightBgColor: "bg-cyan-600/10",
+  },
+  {
+    icon: <Store className="h-5 w-5" />,
+    title: "Multi-Marketplace Fulfillment",
+    description:
+      "Seamless preparation and fulfillment for Amazon, Walmart, eBay, Shopify, Etsy, WooCommerce, and more—expand effortlessly into new sales channels.",
+    color: "text-cyan-600",
+    bgColor: "bg-cyan-100",
+    lightBgColor: "bg-cyan-600/10",
+  },
+  {
+    icon: <Eye className="h-5 w-5" />,
+    title: "Real-Time Inventory Control",
+    description:
+      "Gain full visibility of your inventory status with live updates, keeping you informed at all times.",
+    color: "text-cyan-600",
+    bgColor: "bg-cyan-100",
+    lightBgColor: "bg-cyan-600/10",
+  },
+];
 
   return (
     <section ref={sectionRef} className="relative min-h-screen py-16">
