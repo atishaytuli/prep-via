@@ -57,8 +57,6 @@ export default function CalculatorSection() {
     <section className="mb-16 relative">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto relative">
-          {/* Improved gradient - more subtle and centered */}
-          <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-[60%] h-16 bg-gradient-to-r from-cyan-300/30 via-cyan-400/40 to-cyan-300/30 rounded-full blur-3xl"></div>
 
           <div className="border border-gray-200 rounded-2xl overflow-hidden shadow-sm bg-white relative z-10">
             <div className="p-6 md:p-8">

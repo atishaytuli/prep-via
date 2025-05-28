@@ -12,6 +12,7 @@ import LogisticsStorageSection from "./components/logistics";
 import OversizedItemSection from "./components/oversized";
 import AddOnServicesSection from "./components/addon";
 import CostCalculatorSection from "../pricing/components/calculator";
+import CostCalculatorFree from "./components/calculator";
 
 const Profits = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,6 +37,7 @@ const Profits = () => {
         <LogisticsStorageSection />
         <OversizedItemSection />
         <AddOnServicesSection />
+        <CostCalculatorFree />
         <CostCalculatorSection />
       </main>
       <FAQSection />

@@ -3,6 +3,7 @@
 import { useState } from "react"
 import HeroSection from "./hero"
 import CalculatorSection from "./calculator"
+import CostCalculatorFree from "@/app/prepviaservices/components/calculator"
 import PricingTabs from "../components/ui/pricing-tab"
 import PromoCard from "../components/ui/promocard"
 
@@ -13,6 +14,7 @@ export default function PricingPage() {
   return (
     <div className="bg-white">
       <HeroSection />
+      <CostCalculatorFree />
       <CalculatorSection />
       <PricingTabs
         activeTab={activeTab}

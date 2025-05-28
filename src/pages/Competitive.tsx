@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { Crown, Zap, Settings, WarehouseIcon, MapPin, Barcode, Clock, PackageCheck, Boxes, Store, Eye } from "lucide-react";
+import { Crown, WarehouseIcon, MapPin, Barcode, Clock, PackageCheck, Boxes, Store, Eye } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TabButtons } from "@/components/Tabbutton";
 
